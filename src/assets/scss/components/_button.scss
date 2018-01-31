@@ -1,0 +1,37 @@
+$btn-bg: darken($gray-lite, 7%);
+
+.button {
+  display: inline-block;
+  border: 0 solid transparent;
+  padding: 8px 15px;
+  background: $btn-bg;
+  font-size: 12px;
+  text-transform: uppercase;
+  transition: background 0.2s linear;
+  &, &:hover, &:focus, &:visited {
+    color: $white;
+  }
+  &:focus {
+    border: 1px solid $blue;
+    outline: initial;
+  }
+  &:hover {
+    @media (min-width: 1024px) {
+      background: lighten($btn-bg, 7%);
+    }
+  }
+}
+.button__wrapper {
+  display: block;
+  margin: 20px 0;
+  width: 100%;
+}
+.button--left {
+  text-align: left;
+}
+.button--right {
+  text-align: right;
+}
+.button--center {
+  text-align: center;
+}

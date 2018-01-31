@@ -1,0 +1,68 @@
+/* base header styles **************************************************************
+************************************************************************************/
+
+.header {
+	position: fixed;
+	z-index: 9999;
+	display: block;
+	width: 100%;
+	height: $header-height;
+	transition: height 0.3s linear;
+	ul {
+		list-style: none;
+	}
+	a {
+		&:focus {
+			outline: initial;
+		}
+		&:active {
+			color: inherit;
+		}
+	}
+}
+.header__inner {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 0 15px;
+	background: $header-bg;
+}
+.header__logo {
+	&, &:hover, &:focus {
+		color: $white;
+	}
+	h1 {
+		display: inline-block;
+		margin: 0;
+		padding: 20px 0;
+	}
+	img {
+		height: 100%;
+		margin: 0;
+		padding: 18px 0;
+		.nav & {
+			max-width: 160px;
+			height: auto;
+			padding: 0;
+		}
+	}
+}
+.header__space {
+	height: $header-height;
+	transition: height 0.3s linear;
+}
+
+@media (max-width: $header-breakpoint){
+	.header {
+		height: $header-height-sm;
+	}
+	.header__logo {
+		img {
+			padding: 12px 0;
+		}
+	}
+	.header__space {
+		height: $header-height-sm;
+	}
+}

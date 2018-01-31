@@ -1,0 +1,22 @@
+.hero {
+    padding: 30px 0 40px;
+    background-color: $gray-dark;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    background-position: center;
+}
+
+.hero__content {
+    display: block;
+}
+
+.hero.hero--extended {
+    min-height: 500px;
+    padding: 60px 0;
+    .hero__content {
+        max-width: 750px;
+        margin: 140px auto 0;
+        color: $white;
+        text-align: center;
+    }
+}

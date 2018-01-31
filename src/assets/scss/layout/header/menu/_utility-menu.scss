@@ -1,0 +1,53 @@
+.utility-menu {
+	display: inline-block;
+	float: right;
+	width: auto;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	list-style: none;
+	text-transform: uppercase;
+	text-align: right;
+}
+
+.utility-menu__list {
+	display: inline-block;
+	width: auto;
+	height: 100%;
+	margin: 0 20px 0 10px;
+	padding: 0;
+	text-align: left;
+	> li {
+		display: inline-block;
+		width: auto;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		a {
+			display: inline-block;
+			width: auto;
+			padding: 33px 7px 10px;
+			color: $menu-color;
+		}
+	}
+}
+
+@media (max-width: $header-breakpoint){
+	.utility-menu {
+		position: static;
+		top: initial;
+		right: initial;
+		width: 100%;
+		text-align: center;
+	}
+	.utility-menu__list {
+		display: block;
+		width: 100%;
+		text-align: center;
+		> li {
+			display: block;
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,250 @@
+*:after,
+*:before,
+* {
+  box-sizing: border-box;
+}
+
+a {
+  &:focus, &:hover {
+    text-decoration: none;
+  }
+}
+
+$hover: 0.2s linear;
+
+$white: #fff;
+$gray: #b0b0b0;
+$default-text: #4a4a4a;
+$blue: #15A9E1;
+$blue-hover: lighten($blue, 7%);
+
+@mixin carousel-arrow {
+  content: "";
+  display: block;
+  width: 45px;
+  height: 45px;
+  transform: rotate(-45deg);
+}
+
+.modal-slider {
+  text-align: center;
+  margin-bottom: 100px !important;
+  margin-top: 40px;
+  .image-circle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &.first {
+    margin-top: 0;
+  }
+}
+
+.slick-slide {
+  padding-left: 30px;
+  padding-right: 30px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.slick-dots {
+  bottom: -100px;
+  li {
+    margin: 0 10px 10px;
+    button {
+      &:before {
+        content: "";
+        font-size: 0;
+        width: 16px;
+        height: 16px;
+        border: 1px solid $gray;
+        border-radius: 50%;
+        opacity: 1;
+        transition: background-color $hover;
+      }
+    }
+    &.slick-active {
+      button {
+        &:before {
+          background-color: $gray;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.slick-prev, .slick-next {
+  width: 65px;
+  height: 65px;
+  &:before {
+    @include carousel-arrow();
+  }
+}
+
+.slick-prev {
+  left: -35px;
+  @media (max-width: 1276px) {
+    left: -30px;
+  }
+  &:before {
+    border-top: 2px solid $gray;
+    border-left: 2px solid $gray;
+  }
+}
+
+.slick-next {
+  right: -45px;
+  @media (max-width: 1276px) {
+    right: -40px;
+  }
+  &:before {
+    border-bottom: 2px solid $gray;
+    border-right: 2px solid $gray;
+  }
+}
+
+.item-image-container {
+  max-width: 180px;
+  position: relative;
+  display: block;
+  width: auto;
+  height: auto;
+  margin: 0 auto 20px;
+  img, .item-image {
+    display: block;
+    width: 100%;
+    border-radius: 100%;
+    background: $gray;
+  }
+  div.item-image, span.item-image {
+    padding-bottom: 100%;
+  }
+}
+
+.item-details {
+  text-align: center;
+}
+
+.item-title {
+  display: block;
+  margin-bottom: 5px;
+  color: $blue;
+  text-transform: uppercase;
+  transition: $hover;
+}
+
+.item-subtitle {
+  display: block;
+  margin-bottom: 10px;
+  color: $default-text;
+  font-weight: 500;
+}
+
+.item-description {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  p {
+    font-size: 16px;
+  }
+}
+
+.modal-list {
+  .item {
+    margin-bottom: 30px;
+    @media (max-width: 480px) {
+      width: 100%;
+    }
+    a {
+      cursor: pointer;
+      &:hover {
+        .item-title {
+          color: $blue-hover;
+        }
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.modal {
+  z-index: 99999;
+  .item {
+    clear: both;
+    .item-details {
+      margin-bottom: 30px;
+    }
+    .item-title,
+    .item-subtitle {
+      font-size: 18px;
+    }
+  }
+  .container {
+    position: relative;
+    width: 100%;
+    padding: 50px 0;
+    background: $white;
+  }
+  .modal-dialog {
+    width: 100%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    z-index: 999;
+    &:before,
+    &:after {
+      position: absolute;
+      content: "";
+      top: 20px;
+      right: 0;
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: $gray;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(135deg);
+    }
+  }
+  .slick-dots {
+    bottom: -40px;
+    display: none !important;
+  }
+  .slick-prev, .slick-next {
+    display: block !important;
+  }
+  .slick-dotted.slick-slider {
+    margin-bottom: 0 !important;
+  }
+  @media (max-width: 992px) {
+    .slick-dots {
+      display: block !important;
+    }
+    .slick-prev, .slick-next {
+      display: none !important;
+    }
+    .slick-dotted.slick-slider {
+      margin-bottom: 30px !important;
+    }
+  }
+}
+
+.modal-backdrop {
+  z-index: 0;
+}

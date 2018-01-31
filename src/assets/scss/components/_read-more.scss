@@ -1,0 +1,47 @@
+.read-more {
+	position: relative;
+	display: inline-block;
+	margin-top: 10px;
+	font-size: 12px;
+	text-transform: uppercase;
+	clear: both;
+	cursor: pointer;
+	&, &:hover, &:focus, &:visited {
+		color: $default-text;
+	}
+	&:after {
+		content: "\f107";
+		position: absolute;
+		right: -22px;
+		top: -10px;
+		font-family: "FontAwesome";
+		font-size: 24px;
+		color: $default-text;
+		transition: 0.3s linear;
+	}
+	&.active {
+		&:after {
+			content: "\f106";
+		}
+	}
+}
+
+.read-more__wrapper {
+	display: block;
+	margin: 20px 0;
+	width: 100%;
+}
+
+.read-more__content__wrapper {
+	position: relative;
+	height: 0;
+	overflow: hidden;
+}
+
+.read-more__content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	opacity: 0;
+}

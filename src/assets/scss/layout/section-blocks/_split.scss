@@ -1,0 +1,43 @@
+.section.section--split {
+    position: relative;
+    .section__content {
+        padding: 0 15px;
+    }
+}
+
+.split-bg {
+    display: inline-block;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: $gray-lite;
+    background-size: cover !important;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.split-bg--right {
+    right: 0;
+    left: initial;
+}
+
+.split-image {
+    display: block;
+    margin: 0 auto;
+    & + p {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: $screen-sm){
+    .split-bg {
+        display: block;
+        min-height: 300px;
+        width: 100%;
+        position: static;
+        top: initial;
+        bottom: initial;
+    }
+}

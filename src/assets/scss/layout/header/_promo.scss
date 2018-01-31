@@ -1,0 +1,117 @@
+// include _header-promo.scss after _header.scss to ensure $header-height and $header-height-sm are referenced
+
+$promo-height: 36px;
+$promo-duration: 0.3s;
+
+.promo {
+  position: relative;
+  background: $gray-dark;
+  height: $promo-height;
+  text-align: center;
+  transition: 0.5s linear;
+  overflow: hidden;
+  @media (max-width: $screen-sm) {
+    text-align: left;
+  }
+  a {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: $white;
+    cursor: pointer;
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 0.45rem;
+      height: 0.45rem;
+      border-right: 2px solid $white;
+      border-bottom: 2px solid $white;
+      margin-left: 0.2rem;
+      margin-bottom: 1px;
+      transform: rotate(-45deg);
+      transition: 0.3s linear;
+    }
+  }
+}
+
+.promo__inner {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  padding: 10px 40px;
+  opacity: 0;
+  transition: opacity 0.3s linear;
+  @media (max-width: $screen-sm) {
+    padding: 10px 70px 10px 40px;
+  }
+  @media (max-width: $screen-xs) {
+    padding: 10px 60px 10px 30px;
+  }
+}
+
+.promo__close {
+  position: absolute;
+  top: 50%;
+  right: 80px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  display: block;
+  cursor: pointer;
+  @media (max-width: $screen-sm) {
+    right: 40px;
+  }
+  @media (max-width: $screen-xs) {
+    right: 30px;
+  }
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: $white;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+.header {
+  top: $promo-height * -1;
+  transition: top $promo-duration linear, height $promo-duration linear;
+  transition-delay: $promo-duration;
+}
+
+.header__space {
+  transition: height $promo-duration linear;
+  transition-delay: $promo-duration;
+}
+
+.show-promo {
+  .header {
+    top: 0;
+    transition-delay: $promo-duration;
+  }
+  .promo {
+    .promo__inner {
+      opacity: 1;
+      transition-delay: $promo-duration;
+    }
+  }
+  .header__space {
+    height: $header-height + $promo-height;
+    transition-delay: $promo-duration;
+    @media (max-width: $screen-sm) {
+      height: $header-height-sm + $promo-height;
+    }
+  }
+}

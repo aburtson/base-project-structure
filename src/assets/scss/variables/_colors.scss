@@ -1,0 +1,21 @@
+$default-text: #333;
+
+$black: #000;
+$white: #fff;
+
+$grey: #666;
+$grey-lite: lighten($grey, 20%);
+$grey-dark: darken($grey, 20%);
+$off-white: #f8f8f8;
+
+$grey-bg: $off-white;
+
+/* used on form fields */
+$red: #ff0000;
+$blue: #00bbff;
+
+/* grey or gray? you choose! */
+$gray: $grey;
+$gray-lite: $grey-lite;
+$gray-dark: $grey-dark;
+$gray-bg: $grey-bg;

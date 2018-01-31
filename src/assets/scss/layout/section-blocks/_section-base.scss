@@ -1,0 +1,29 @@
+$section-spacing: 60px;
+$section-spacing-md: 50px;
+$section-spacing-sm: 40px;
+
+.section {
+    display: block;
+    width: 100%;
+    position: relative;
+    &:nth-of-type(even) {
+        background: $grey-bg;
+    }
+}
+
+.section__content {
+    display: block;
+    width: 100%;
+    margin-top: $section-spacing;
+    margin-bottom: $section-spacing;
+
+    @media (max-width: $screen-md) {
+        margin-top: $section-spacing-md;
+        margin-bottom: $section-spacing-md;
+    }
+
+    @media (max-width: $screen-sm) {
+        margin-top: $section-spacing-sm;
+        margin-bottom: $section-spacing-sm;
+    }
+}

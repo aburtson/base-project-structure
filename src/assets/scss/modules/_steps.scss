@@ -1,0 +1,44 @@
+$black: #000;
+$white: #fff;
+$gray: #666;
+$gray-lite: #eee;
+
+.steps {
+  position: relative;
+}
+
+.steps__line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 0;
+  margin-left: -1px;
+  background-color: $gray-lite;
+}
+
+.step {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  background: $white;
+  padding: 30px 20px;
+  border: 2px solid $gray-lite;
+  border-radius: 15px;
+  text-align: center;
+  p {
+    margin-bottom: 10px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 40px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.step__marker {
+  display: block;
+  font-size: 24px;
+  text-align: center;
+}

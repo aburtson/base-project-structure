@@ -1,0 +1,56 @@
+.nav {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	display: block;
+	width: auto;
+}
+.nav__header {
+	display: none;
+}
+.nav__overlay {
+	display: none;
+}
+
+@media (max-width: $header-breakpoint){
+	.nav {
+		position: fixed;
+		z-index: 10;
+		top: 0;
+		right: -250px;
+		bottom: 0;
+		display: block;
+		width: 250px;
+		background: $nav-bg-mobile;
+		overflow: scroll;
+		transition: 0.4s ease;
+	}
+	.nav__header {
+		position: relative;
+		display: block;
+		width: 100%;
+		min-height: 60px;
+		padding: 15px 15px;
+	}
+	.nav__overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: block;
+		width: 100%;
+		background: transparent;
+		transition: 0.3s linear;
+	}
+	.nav-active {
+		overflow: hidden;
+		.nav {
+			right: 0;
+		}
+		.nav__overlay {
+			background: rgba(0,0,0,0.1);
+		}
+	}
+}

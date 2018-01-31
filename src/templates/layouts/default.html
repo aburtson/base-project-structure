@@ -1,0 +1,27 @@
+<!doctype html>
+<!--[if lte IE 8]><html class="no-js is-lte-ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="no-js is-ie9" lang="en"><![endif]-->
+<!--[if (gt IE 9)|(!IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Audacity{% if title %} - {{ title }}{% endif %}</title>
+    <meta name="description" content="{{ description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/main.min.css">
+</head>
+<body>
+    <div class="site-constraint {% if page %}page-{{ page }}{% endif %}">
+        {% include "../partials/header.html" %}
+        <main>
+            <div class="header__space"></div>
+            {% block content %}{% endblock %}
+        </main>
+        {% include "../partials/footer.html" %}
+    </div>
+    {% include "../partials/outdated-browser.html" %}
+    <script src="/assets/js/app.min.js"></script>
+</body>
+</html>

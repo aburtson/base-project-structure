@@ -1,0 +1,21 @@
+// mobile breakpoint
+$header-breakpoint: 768px;
+
+// background colors
+$header-bg: $gray;
+$menu-list2-bg: $gray-lite;
+$menu-list3-bg: lighten($menu-list2-bg, 10%);
+$nav-bg-mobile: $header-bg;
+
+// colors
+$menu-color: $white;
+$menu-color-active: $white;
+$trigger-color: $white;
+
+// transitions
+$header-hover: 0.3s linear;
+
+// header heights
+$header-height: 80px;
+$header-height-sm: 60px;
+
