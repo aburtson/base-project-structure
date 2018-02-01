@@ -1,7 +1,7 @@
 {
-  "name": "starter",
+  "name": "base project structure",
   "version": "1.0.0",
-  "description": "base project structure",
+  "description": "starter with header and base layouts",
   "main": "index.js",
   "dependencies": {
     "jquery": "^3.2.1"
