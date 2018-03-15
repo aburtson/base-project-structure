@@ -26,7 +26,7 @@ var vendorScripts = [
 // custom project scripts
 var mainScripts = [
 	'./src/assets/js/main/header.js',
-	'./src/assets/js/main/promo.js',
+	// './src/assets/js/main/promo.js',
 	'./src/assets/js/main/footer.js',
 	'./src/assets/js/main/vertical-center.js',
 	'./src/assets/js/main/date-picker.js',
